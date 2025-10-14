@@ -92,9 +92,3 @@ python shopee_inference.py
 Outputs similarity predictions as `submission.csv` with matched product IDs.
 
 ---
-
-## 👨‍💻 Author
-
-**Amit Gunjan Jha**  
-B.Tech CSE (Cloud Computing) — VIT Bhopal University  
-Use Case: *Unthinkable Solutions Pvt. Ltd. Assessment*
