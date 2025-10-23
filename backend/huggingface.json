@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "embedding_backend": "open_clip",
+  "model_name": "ViT-B-32",
+  "pretrained": "openai",
+  "precision": "auto",
+  "device": "auto",
+  "batch_size": 128,
+  "image_size": 224,
+  "normalize": true,
+  "data": {
+    "images_dir": "backend/products/images",
+    "out_dir": "backend/data",
+    "embeddings_path": "backend/data/embeddings.npy",
+    "meta_path": "backend/data/meta.json",
+    "faiss_path": "backend/data/index.faiss"
+  },
+  "search": {
+    "top_k": 24,
+    "metric": "cosine"
+  }
+}

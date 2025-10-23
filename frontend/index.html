@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visual Product Matcher — New UI</title>
+
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ✅ Force default LIGHT theme -->
+    <script>
+      (() => {
+        // Try to read saved theme
+        const saved = localStorage.getItem("theme");
+
+        // Default to LIGHT if not set
+        const theme = saved || "light";
+
+        // Save the default back (only first load)
+        if (!saved) localStorage.setItem("theme", theme);
+
+        // Apply theme class to <html>
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
+
+    <!-- Hint browsers that light mode is default -->
+    <meta name="color-scheme" content="light dark" />
+  </head>
+
+  <!-- ✅ Default white background + dark text -->
+  <body class="min-h-screen bg-white text-slate-900 antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>

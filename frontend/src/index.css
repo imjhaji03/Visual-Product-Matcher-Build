@@ -1,0 +1,82 @@
+/* frontend/src/index.css */
+
+/* Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------
+   Global base: default = LIGHT theme (white bg)
+------------------------------------------------------- */
+@layer base {
+  /* Force white form controls in LIGHT, proper dark in DARK */
+  .filters-panel input[type="text"],
+  .filters-panel input[type="search"],
+  .filters-panel input[type="number"],
+  .filters-panel select,
+  .filters-panel textarea {
+    @apply bg-white text-slate-900 placeholder:text-slate-500 border border-black/10 rounded-lg;
+  }
+
+  .dark .filters-panel input[type="text"],
+  .dark .filters-panel input[type="search"],
+  .dark .filters-panel input[type="number"],
+  .dark .filters-panel select,
+  .dark .filters-panel textarea {
+    @apply bg-neutral-900 text-neutral-100 placeholder:text-neutral-400 border-white/10;
+  }
+}
+
+/* ------------------------------------------------------
+   Utilities & small tweaks
+------------------------------------------------------- */
+
+/* Avoid animating everything globally (better perf than * selector) */
+.transition-theme,
+.card-base,
+.header-gradient {
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Centered container utility */
+.container-centered {
+  @apply flex items-center justify-center min-h-screen;
+}
+
+/* Card-like panel */
+.card-base {
+  @apply bg-white dark:bg-neutral-900 border border-black/5 dark:border-white/10 rounded-2xl shadow-sm;
+}
+
+/* Header gradient using CSS vars that map to Tailwind colors */
+.header-gradient {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-weak) 100%);
+  color: white;
+}
+
+/* ------------------------------------------------------
+   Scrollbars (Chromium/WebKit only)
+------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ------------------------------------------------------
+   Animations
+------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
