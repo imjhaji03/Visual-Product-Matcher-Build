@@ -3,8 +3,6 @@
 A fast, browser-first **visual search** demo that finds similar products from your catalog.  
 Front end is a lightweight Vite + Tailwind app; back end uses Python with **OpenCLIP** to generate embeddings and a simple API to search them.
 
-> ⚡ **Status**: Work‑in‑progress repo scaffold that already runs end‑to‑end locally. Fill the **TODO** blocks with your paths/endpoints if they differ.
-
 ---
 
 ## ✨ Features
